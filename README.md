@@ -55,18 +55,31 @@ src/
 ⚙️ Development
 
 Start the local development server:
-
+```
 ng serve
+```
 
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Open http://localhost:4200
- in your browser.
-The app will reload automatically on source code changes.
+## Code scaffolding
 
-🧱 Build
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-Build the project for production:
+```bash
+ng generate component component-name
+```
 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
 ng build
 
 
@@ -75,9 +88,9 @@ Build output will be available in the dist/ directory.
 🧪 Testing
 
 Run unit tests (setup ready for extension):
-
+```
 ng test
-
+```
 🎯 What This Project Demonstrates
 
 ✅ Practical Angular application flow (cart → checkout → success)
