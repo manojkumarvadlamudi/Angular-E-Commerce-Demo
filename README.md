@@ -6,6 +6,7 @@ This project focuses on clean component architecture, state management, and user
 🚀 Features
   
   -Product listing with dynamic cart integration
+  
   -Slide-out cart panel with quantity controls
   -Real-time cart count badge
   -Fully designed checkout page with summary, address, and payment options
