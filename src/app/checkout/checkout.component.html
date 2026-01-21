@@ -1,0 +1,138 @@
+<div class="checkout-container">
+
+  <h2 class="title">Checkout</h2>
+
+  <!-- EMPTY CART -->
+  <div class="empty-cart-wrapper" *ngIf="cart.length === 0 && !showSuccess">
+    <div class="empty-cart-card">
+      <div class="empty-icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven’t added anything yet.</p>
+
+      <a routerLink="/" class="continue-btn">
+        ← Continue Shopping
+      </a>
+    </div>
+  </div>
+
+  <!-- CHECKOUT CONTENT -->
+  <div class="checkout-grid" *ngIf="cart.length > 0 && !showSuccess">
+
+    <!-- CART ITEMS -->
+    <div class="card">
+      <h3>Cart Items</h3>
+
+      <div class="cart-item" *ngFor="let item of cart; trackBy: trackById">
+        <img
+          [src]="item.images?.[0] || 'assets/images/placeholder.png'"
+          class="cart-img"
+          alt="{{ item.name }}"
+        />
+
+        <div class="item-details">
+          <h4>{{ item.name }}</h4>
+          <p>₹{{ item.price }}</p>
+
+          <div class="qty-box">
+            <button class="qty-btn" (click)="decreaseQty(item)">−</button>
+            <span>{{ item.quantity }}</span>
+            <button class="qty-btn" (click)="increaseQty(item)">+</button>
+          </div>
+
+          <button class="remove-btn" (click)="removeItem(item)">
+            Remove
+          </button>
+        </div>
+
+        <div class="item-total">
+          ₹{{ item.price * item.quantity }}
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="card">
+      <h3>Order Summary</h3>
+
+      <div class="summary-row" *ngFor="let item of cart">
+        <span>{{ item.name }} × {{ item.quantity }}</span>
+        <strong>₹{{ item.price * item.quantity }}</strong>
+      </div>
+
+      <hr />
+
+      <div class="summary-total">
+        <span>Total</span>
+        <strong>₹{{ total }}</strong>
+      </div>
+    </div>
+
+    <!-- DELIVERY DETAILS -->
+    <div class="card full-width">
+      <h3>Delivery Details</h3>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" [(ngModel)]="customer.name" />
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" [(ngModel)]="customer.phone" />
+        </div>
+
+        <div class="form-group full">
+          <label>Delivery Address</label>
+          <textarea [(ngModel)]="customer.address"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="card full-width">
+      <h3>Payment Method</h3>
+
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" value="cod" name="payment" [(ngModel)]="customer.payment" />
+          <span class="custom-radio"></span>
+          Cash on Delivery
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" value="upi" name="payment" [(ngModel)]="customer.payment" />
+          <span class="custom-radio"></span>
+          UPI
+        </label>
+      </div>
+    </div>
+
+    <button
+      class="place-order"
+      [disabled]="!customer.name || !customer.phone || !customer.address"
+      (click)="placeOrder()"
+    >
+      Place Order
+    </button>
+  </div>
+
+ <!-- SUCCESS -->
+<div class="success-overlay" *ngIf="showSuccess">
+  <div
+    class="success-box"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successTitle"
+    aria-describedby="successDesc"
+  >
+    <div class="checkmark" aria-hidden="true">✓</div>
+
+    <h3 id="successTitle">Order Placed!</h3>
+    <p id="successDesc">Your order has been successfully placed.</p>
+
+    <button class="success-btn" type="button" (click)="router.navigate(['/'])">
+      Continue Shopping
+    </button>
+  </div>
+</div>

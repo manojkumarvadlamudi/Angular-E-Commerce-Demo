@@ -1,0 +1,159 @@
+/* ================= PRODUCT GRID ================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 36px;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+/* ================= PRODUCT CARD ================= */
+.product-card {
+  background: linear-gradient(180deg, #faf7f5, #f1ece8);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= IMAGE BOX ================= */
+.image-box {
+  position: relative;
+  height: 260px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-box img {
+  max-width: 88%;
+  max-height: 88%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .image-box img {
+  transform: scale(1.08);
+}
+
+/* ================= IMAGE NAV BUTTONS ================= */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 10;
+}
+
+.image-box:hover .nav {
+  opacity: 1;
+}
+
+.nav:hover {
+  background: #0f172a;
+}
+
+.nav.prev {
+  left: 12px;
+}
+
+.nav.next {
+  right: 12px;
+}
+
+/* ================= IMAGE DOTS ================= */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #94a3b8;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #4338ca;
+}
+
+/* ================= PRODUCT INFO ================= */
+.product-info {
+  padding: 22px 24px 26px;
+}
+
+.product-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2933;
+  margin-bottom: 6px;
+}
+
+.description {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* ================= PRICE ================= */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4338ca;
+  margin-bottom: 16px;
+}
+
+/* ================= ADD TO CART ================= */
+.add-cart-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #4338ca, #6366f1);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.45);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .product-grid {
+    padding: 20px;
+    gap: 22px;
+  }
+
+  .image-box {
+    height: 220px;
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+  }
+}
