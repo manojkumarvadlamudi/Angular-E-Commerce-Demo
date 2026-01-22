@@ -4,28 +4,28 @@
     class="product-card"
     *ngFor="let product of products">
 
-    <!-- IMAGE BOX -->
+    <!-- image box -->
     <div class="image-box">
 
       <img
         [src]="product.images[product.currentImageIndex]"
         [alt]="product.name" />
 
-      <!-- LEFT NAV -->
+      <!-- left navigation -->
       <button
         class="nav prev"
         (click)="prevImage(product)">
         ‹
       </button>
 
-      <!-- RIGHT NAV -->
+      <!-- right navigation -->
       <button
         class="nav next"
         (click)="nextImage(product)">
         ›
       </button>
 
-      <!-- DOTS -->
+      <!-- dots -->
       <div class="dots">
         <span
           class="dot"
@@ -36,7 +36,7 @@
 
     </div>
 
-    <!-- PRODUCT INFO -->
+    <!-- product information-->
     <div class="product-info">
 
       <h3>{{ product.name }}</h3>
