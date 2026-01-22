@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* ================= GLOBAL ================= */
+/* global*/
 *,
 *::before,
 *::after {
@@ -14,7 +14,7 @@ body {
   color: #0f172a;
 }
 
-/* ================= TOP BAR (GLASS) ================= */
+/* top bar transperant*/
 .top-bar {
   position: sticky;
   top: 0;
@@ -47,14 +47,14 @@ body {
     box-shadow 0.25s ease;
 }
 
-/* SHRINK ON SCROLL */
+/* shrink and roll */
 .top-bar.shrink {
   height: 58px;
   padding: 0 24px;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
 }
 
-/* ================= BRAND ================= */
+/* brand */
 .brand {
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ body {
   letter-spacing: 0.4px;
 }
 
-/* ================= CART ICON ================= */
+/* cart icon */
 .cart-icon {
   position: relative;
   font-size: 22px;
@@ -103,7 +103,7 @@ body {
   transform: scale(0.95);
 }
 
-/* ================= BADGE ================= */
+/* badge */
 .badge {
   position: absolute;
   top: -6px;
@@ -127,12 +127,12 @@ body {
   box-shadow: 0 6px 18px rgba(239, 68, 68, 0.6);
 }
 
-/* BADGE BOUNCE */
+/* badge bounce */
 .badge.bounce {
   animation: badgeBounce 0.3s ease;
 }
 
-/* ================= OVERLAY ================= */
+/* overlay*/
 .cart-overlay {
   position: fixed;
   inset: 0;
@@ -141,7 +141,7 @@ body {
   animation: fadeIn 0.25s ease;
 }
 
-/* ================= CART PANEL ================= */
+/*cart panel */
 .cart-panel {
   position: fixed;
   top: 76px;
@@ -168,7 +168,7 @@ body {
   font-weight: 700;
 }
 
-/* ================= CART ITEMS ================= */
+/* cart items*/
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -187,7 +187,7 @@ body {
   font-size: 12px;
 }
 
-/* ================= QTY ================= */
+/* quantity */
 .qty-controls {
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@ body {
   transform: scale(0.9);
 }
 
-/* ================= FOOTER ================= */
+/* footer */
 .cart-footer {
   margin-top: auto;
 }
@@ -229,7 +229,7 @@ body {
   margin: 14px 0;
 }
 
-/* ================= CHECKOUT BUTTON ================= */
+/* checkout button */
 .checkout-btn {
   width: 100%;
   padding: 12px;
@@ -252,7 +252,7 @@ body {
   box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
 }
 
-/* ================= ANIMATIONS ================= */
+/* animations */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -275,7 +275,7 @@ body {
   100% { transform: scale(1); }
 }
 
-/* ================= MOBILE ================= */
+/* mobile*/
 @media (max-width: 640px) {
   .top-bar {
     padding: 0 18px;
