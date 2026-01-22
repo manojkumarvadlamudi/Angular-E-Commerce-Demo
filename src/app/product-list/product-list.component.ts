@@ -13,24 +13,24 @@ export class ProductListComponent {
 
   constructor(private cartService: CartService) {}
 
-  // ➕ Add product to cart
+  //  Add product to cart
   addToCart(product: any) {
     this.cartService.addToCart(product);
   }
 
-  // ▶️ Next image
+  //  Next image
   nextImage(product: any) {
     product.currentImageIndex =
       (product.currentImageIndex + 1) % product.images.length;
   }
 
-  // ◀️ Previous image
+  //  Previous image
   prevImage(product: any) {
     product.currentImageIndex =
       (product.currentImageIndex - 1 + product.images.length) % product.images.length;
   }
 
-  // 🛍️ Product list
+  // Product list
   products = [
     {
       id: 1,
